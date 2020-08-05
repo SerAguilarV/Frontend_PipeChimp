@@ -1,0 +1,22 @@
+<br>
+<div class="container-fluid row">
+  <div class="col-5">
+    <h4>Selecciona los sectores a exportar</h4>
+    <form><div class="form-check" *ngFor="let sector of sectores">
+      <input class="form-check-input" type="checkbox" [name]="sector" [id]="sector" [value] = "sector" (change)="onCheck(sector)">
+      <label class="form-check-label" for="defaultCheck1">
+        {{sector}}
+      </label>
+    </div></form>
+  </div>
+  <div class="col-3">
+    sectors sent: {{sectoresSent}}
+    <br>
+    sectores not sent: {{sectoresNotSent}}
+  </div>
+  <div class="col-3">
+    <br>
+    <button type="button" class="btn btn-primary btn-lg" (click)="sendSectors()">Export to MailChimp</button>
+  </div>
+</div>
+
